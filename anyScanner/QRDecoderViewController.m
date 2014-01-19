@@ -83,12 +83,12 @@
     [self.view addSubview: self.readerView];
     
     //flashbtn
-    UIImage *flashImg = [UIImage imageNamed:@"S4_FlashOn"];
-    flashBtn = [UIButton  buttonWithType:UIButtonTypeCustom];
-    flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-140-44, 13.5, 23);
-    [flashBtn setBackgroundImage:flashImg forState:UIControlStateNormal];
-    [flashBtn addTarget:self action:@selector(PressFlash:) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:flashBtn];
+//    UIImage *flashImg = [UIImage imageNamed:@"S4_FlashOn"];
+//    flashBtn = [UIButton  buttonWithType:UIButtonTypeCustom];
+//    flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-140-44, 13.5, 23);
+//    [flashBtn setBackgroundImage:flashImg forState:UIControlStateNormal];
+//    [flashBtn addTarget:self action:@selector(PressFlash:) forControlEvents:UIControlEventTouchDown];
+//    [self.view addSubview:flashBtn];
 
 }
 
