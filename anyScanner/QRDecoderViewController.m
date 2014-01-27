@@ -130,7 +130,7 @@
     // Insert your own code to handle singletap
     NSLog(@"tap1");
     [self.readerView stop];
-    picView.image = [UIImage imageNamed:@"isis.jpg"];
+    picView.image = [UIImage imageNamed:@"zoro01.png"];
     picView.userInteractionEnabled = YES;
     picView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:picView];
@@ -148,7 +148,7 @@
     // Insert your own code to handle singletap
     NSLog(@"tap1");
     [self.readerView stop];
-    picView.image = [UIImage imageNamed:@"jennifer.jpg"];
+    picView.image = [UIImage imageNamed:@"zoro02.png"];
     picView.userInteractionEnabled = YES;
     picView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:picView];

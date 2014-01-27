@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B8213246319344939BA35E57 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 042A242431A14CA793341E3F /* libPods.a */; };
+		D03CA3D418963CA20026116A /* zoro01.png in Resources */ = {isa = PBXBuildFile; fileRef = D03CA3D218963CA20026116A /* zoro01.png */; };
+		D03CA3D518963CA20026116A /* zoro02.png in Resources */ = {isa = PBXBuildFile; fileRef = D03CA3D318963CA20026116A /* zoro02.png */; };
 		D0473C15188C1B9D00EDAAA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0473C14188C1B9D00EDAAA3 /* Foundation.framework */; };
 		D0473C17188C1B9D00EDAAA3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0473C16188C1B9D00EDAAA3 /* CoreGraphics.framework */; };
 		D0473C19188C1B9D00EDAAA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0473C18188C1B9D00EDAAA3 /* UIKit.framework */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		042A242431A14CA793341E3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AB3D1349774E18B3340028 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D03CA3D218963CA20026116A /* zoro01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoro01.png; sourceTree = "<group>"; };
+		D03CA3D318963CA20026116A /* zoro02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoro02.png; sourceTree = "<group>"; };
 		D0473C11188C1B9D00EDAAA3 /* anyScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anyScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0473C14188C1B9D00EDAAA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0473C16188C1B9D00EDAAA3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,6 +176,8 @@
 		D0473C49188C1E2B00EDAAA3 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				D03CA3D218963CA20026116A /* zoro01.png */,
+				D03CA3D318963CA20026116A /* zoro02.png */,
 				D0473C4E188C288900EDAAA3 /* isis.jpg */,
 				D0473C4F188C288900EDAAA3 /* jennifer.jpg */,
 				D0473C4A188C1E2B00EDAAA3 /* S4_FlashOff@2x.png */,
@@ -258,10 +264,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0473C51188C288900EDAAA3 /* jennifer.jpg in Resources */,
+				D03CA3D518963CA20026116A /* zoro02.png in Resources */,
 				D0473C1F188C1B9D00EDAAA3 /* InfoPlist.strings in Resources */,
 				D0473C50188C288900EDAAA3 /* isis.jpg in Resources */,
 				D0473C4C188C1E2B00EDAAA3 /* S4_FlashOff@2x.png in Resources */,
 				D0473C27188C1B9D00EDAAA3 /* Images.xcassets in Resources */,
+				D03CA3D418963CA20026116A /* zoro01.png in Resources */,
 				D0473C4D188C1E2B00EDAAA3 /* S4_FlashOn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
