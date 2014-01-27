@@ -10,6 +10,11 @@
 #import "imgLib.h"
 
 @interface QRDecoderViewController ()
+{
+    UIImageView *picView;
+}
+
+@property (nonatomic, retain) UIView *scanBar;
 
 @end
 
@@ -34,18 +39,19 @@
 //按了閃光燈的判斷
 - (IBAction)PressFlash:(id)sender
 {
+    //NSLog(@"pressFlash");
     if ([imgLib flashAvailable]) {
 
         if(self.readerView.torchMode == AVCaptureTorchModeOff)
         {
             [flashBtn setBackgroundImage:[UIImage imageNamed:@"S4_FlashOff"] forState:UIControlStateNormal];
-            flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-140, 26.5, 25.5);
+            flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-60-44, 26.5, 25.5);
             self.readerView.torchMode = AVCaptureTorchModeOn;
         }
         else
         {
             [flashBtn setBackgroundImage:[UIImage imageNamed:@"S4_FlashOn"] forState:UIControlStateNormal];
-            flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-140, 13.5, 23);
+            flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-60-44, 13.5, 23);
             self.readerView.torchMode = AVCaptureTorchModeOff;
         }
     }
@@ -78,20 +84,34 @@
 
     self.readerView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     self.readerView.backgroundColor = [UIColor redColor];
+    self.readerView.userInteractionEnabled = YES;
     [self.readerView start];
     
     [self.view addSubview: self.readerView];
     
     //flashbtn
-//    UIImage *flashImg = [UIImage imageNamed:@"S4_FlashOn"];
-//    flashBtn = [UIButton  buttonWithType:UIButtonTypeCustom];
-//    flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-140-44, 13.5, 23);
-//    [flashBtn setBackgroundImage:flashImg forState:UIControlStateNormal];
-//    [flashBtn addTarget:self action:@selector(PressFlash:) forControlEvents:UIControlEventTouchDown];
-//    [self.view addSubview:flashBtn];
+    UIImage *flashImg = [UIImage imageNamed:@"S4_FlashOn"];
+    flashBtn = [UIButton  buttonWithType:UIButtonTypeCustom];
+    flashBtn.frame = CGRectMake(280, self.view.bounds.size.height-60-44, 13.5, 23);
+    [flashBtn setBackgroundImage:flashImg forState:UIControlStateNormal];
+    [flashBtn addTarget:self action:@selector(PressFlash:) forControlEvents:UIControlEventTouchDown];
+    [self.readerView addSubview:flashBtn];
 
+    //TapGestureRecognizer
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]
+                                                          initWithTarget:self
+                                                          action:@selector(handleSingleTap:)];
+    //[singleTapGestureRecognizer setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+    
+    //longpress
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+    [self.view addGestureRecognizer:longPress];
+    //即將彈出的picView
+    picView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
 }
 
+//zbar回傳結果
 - (void) readerView:(ZBarReaderView *)readerView didReadSymbols: (ZBarSymbolSet *)symbols fromImage:(UIImage *)image
 {
     ZBarSymbol * s = nil;
@@ -100,6 +120,68 @@
     NSLog(@"sdata:%@",s.data);
     //導到網頁
     //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:s.data]];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Data" message: s.data delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
+//點一下
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    // Insert your own code to handle singletap
+    NSLog(@"tap1");
+    [self.readerView stop];
+    picView.image = [UIImage imageNamed:@"isis.jpg"];
+    picView.userInteractionEnabled = YES;
+    picView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:picView];
+    
+    //close pic
+    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    closeBtn.backgroundColor = [UIColor clearColor];
+    [closeBtn addTarget:self action:@selector(closeImg:) forControlEvents:UIControlEventTouchUpInside];
+    [picView addSubview:closeBtn];
+}
+
+
+//長按
+- (void)longPress:(UILongPressGestureRecognizer *)recognizer {
+    // Insert your own code to handle singletap
+    NSLog(@"tap1");
+    [self.readerView stop];
+    picView.image = [UIImage imageNamed:@"jennifer.jpg"];
+    picView.userInteractionEnabled = YES;
+    picView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:picView];
+    
+    //close pic
+    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    closeBtn.backgroundColor = [UIColor clearColor];
+    [closeBtn addTarget:self action:@selector(closeImg:) forControlEvents:UIControlEventTouchUpInside];
+    [picView addSubview:closeBtn];
+}
+
+//關閉imageView
+-(IBAction)closeImg:(id)sender
+{
+    //移除UIimageView
+    for (UIView *subView in self.view.subviews)
+    {
+        if([subView isKindOfClass:[UIImageView class]])
+           [subView removeFromSuperview];
+    }
+    
+    //重新啟動掃瞄
+    [self.readerView start];
+    
+}
+
+//uiAlertView
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        NSLog(@"The cancel button was clicked for alertView");
+    }
+    // else do your stuff for the rest of the buttons (firstOtherButtonIndex, secondOtherButtonIndex, etc)
 }
 
 - (void) viewDidLoad
@@ -112,12 +194,5 @@
     
 }
 
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

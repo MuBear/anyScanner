@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9E46CDD2-E677-480B-9C34-14C89014492B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>anyScanner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>509D597A-408C-46BB-98C2-A248810289BE</key>
+		<string>ssh://github.com/MuBear/anyScanner.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>anyScanner.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>509D597A-408C-46BB-98C2-A248810289BE</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/MuBear/anyScanner.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>509D597A-408C-46BB-98C2-A248810289BE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>509D597A-408C-46BB-98C2-A248810289BE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>anyScanner</string>
+		</dict>
+	</array>
+</dict>
+</plist>

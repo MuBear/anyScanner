@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZBarSDK.h"
 
-@interface QRDecoderViewController : UIViewController<ZBarReaderViewDelegate>
+@interface QRDecoderViewController : UIViewController<ZBarReaderViewDelegate,UIAlertViewDelegate>
 {
     UIImageView *underView;
     UILabel *instructionLabel;

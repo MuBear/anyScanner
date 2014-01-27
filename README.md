@@ -7,6 +7,8 @@ Practice IOS App - Can Scan barcode & QRCode
 ### 實現目標
 - 使用CocoaPods來管理第三方套件
 - 使用zbar SDK 來實做Scan App
+- 使用手勢產生圖片
+- 增加閃光燈的開關
 
 ### Refer URL
 * [Cocoapods 官網]http://cocoapods.org/

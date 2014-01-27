@@ -24,6 +24,8 @@
 		D0473C48188C1D9E00EDAAA3 /* QRDecoderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0473C46188C1D9E00EDAAA3 /* QRDecoderViewController.m */; };
 		D0473C4C188C1E2B00EDAAA3 /* S4_FlashOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0473C4A188C1E2B00EDAAA3 /* S4_FlashOff@2x.png */; };
 		D0473C4D188C1E2B00EDAAA3 /* S4_FlashOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0473C4B188C1E2B00EDAAA3 /* S4_FlashOn@2x.png */; };
+		D0473C50188C288900EDAAA3 /* isis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0473C4E188C288900EDAAA3 /* isis.jpg */; };
+		D0473C51188C288900EDAAA3 /* jennifer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0473C4F188C288900EDAAA3 /* jennifer.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		D0473C46188C1D9E00EDAAA3 /* QRDecoderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRDecoderViewController.m; sourceTree = "<group>"; };
 		D0473C4A188C1E2B00EDAAA3 /* S4_FlashOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "S4_FlashOff@2x.png"; sourceTree = "<group>"; };
 		D0473C4B188C1E2B00EDAAA3 /* S4_FlashOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "S4_FlashOn@2x.png"; sourceTree = "<group>"; };
+		D0473C4E188C288900EDAAA3 /* isis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = isis.jpg; sourceTree = "<group>"; };
+		D0473C4F188C288900EDAAA3 /* jennifer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jennifer.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 		D0473C49188C1E2B00EDAAA3 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				D0473C4E188C288900EDAAA3 /* isis.jpg */,
+				D0473C4F188C288900EDAAA3 /* jennifer.jpg */,
 				D0473C4A188C1E2B00EDAAA3 /* S4_FlashOff@2x.png */,
 				D0473C4B188C1E2B00EDAAA3 /* S4_FlashOn@2x.png */,
 			);
@@ -251,7 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0473C51188C288900EDAAA3 /* jennifer.jpg in Resources */,
 				D0473C1F188C1B9D00EDAAA3 /* InfoPlist.strings in Resources */,
+				D0473C50188C288900EDAAA3 /* isis.jpg in Resources */,
 				D0473C4C188C1E2B00EDAAA3 /* S4_FlashOff@2x.png in Resources */,
 				D0473C27188C1B9D00EDAAA3 /* Images.xcassets in Resources */,
 				D0473C4D188C1E2B00EDAAA3 /* S4_FlashOn@2x.png in Resources */,
