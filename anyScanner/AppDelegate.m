@@ -7,15 +7,21 @@
 //
 
 #import "AppDelegate.h"
-#import "QRDecoderViewController.h"
+#import "rootViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //
+    [Crashlytics startWithAPIKey:@"8366e5c46d4929f7edc04960be1f08d59f244e5d"];
+    [[Crashlytics sharedInstance] setDebugMode:YES];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [[QRDecoderViewController  alloc] init];
+    UINavigationController *naviCtrl = [[UINavigationController alloc] initWithRootViewController:[[rootViewController  alloc] init]];
+    self.window.rootViewController = naviCtrl;
     [self.window makeKeyAndVisible];
     return YES;
 }
